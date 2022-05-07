@@ -1,4 +1,5 @@
 
+# General Config
 spring:
     datasource:
         driver-class-name: org.postgresql.Driver
@@ -17,6 +18,18 @@ spring:
           globally_quoted_identifiers: true
           default_schema: ${SPRING_DATABASE_SCHEMA}
           dialect: org.hibernate.dialect.PostgreSQLDialect
+    cache:
+      type: redis
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      password: ${REDIS_PASSWORD}
+      jedis:
+        pool:
+          max-total: 16
+          max-idle: 8
+          min-idle: 4
+
           
 logging:
   level:

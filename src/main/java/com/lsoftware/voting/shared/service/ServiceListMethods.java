@@ -4,23 +4,24 @@
  */
 package com.lsoftware.voting.shared.service;
 
-import java.util.Set;
+import java.util.List;
 
 /**
- * The Interface QueryBasicMethods.
+ * The Interface ServiceListMethods.
  * 
  * @author Luis Espinosa
  *
  * @param <T> the generic type
  */
-public interface QueryBasicMethods<T> {
+public interface ServiceListMethods<T> {
+	
 	
 	
 	/**
 	 * List all.
 	 *
-	 * @return the sets the
+	 * @return the list
 	 */
-	Set<T> listAll();
+	List<T> listAll();
 
 }

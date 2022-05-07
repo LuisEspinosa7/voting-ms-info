@@ -4,14 +4,14 @@
  */
 package com.lsoftware.voting.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,8 +26,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "candidates")
-public class Candidate {
-	
+public class Candidate implements Serializable {
+
+	/** The Constant serialVersionUID. */
+	private static final long serialVersionUID = 1710773117988263393L;
+
 	/** The id. */
 	@Id
 	@Column(name = "can_id")
@@ -46,7 +49,7 @@ public class Candidate {
 	private int status; 
 	
 	/** The image. */
-	@Column(name = "can_image")
+	@Column(name = "can_image", unique = true)
 	private String image;
 
 }
