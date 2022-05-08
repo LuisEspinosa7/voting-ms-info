@@ -35,4 +35,4 @@ logging:
   level:
     com: 
       lsoftware:
-        inventory: info   
+        voting: info   
