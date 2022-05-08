@@ -55,6 +55,6 @@ public class Vote {
 	
 	/** The document. */
 	@Column(name = "voter_document")
-	private String voterDocument;
+	private String document;
 
 }
