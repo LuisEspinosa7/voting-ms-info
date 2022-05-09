@@ -5,6 +5,8 @@ server:
 spring:
     application:
       name: info
+    zipkin:
+      base-url: ${ZIPKIN_URL}
     cloud:
       consul:
         config:
