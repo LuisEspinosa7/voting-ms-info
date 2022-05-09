@@ -1,6 +1,29 @@
+server:
+  port: 0
 
 # General Config
 spring:
+    application:
+      name: info
+    cloud:
+      consul:
+        config:
+          fail-fast: true
+          #import-check.enabled: true
+        host: ${CONSUL_HOST}
+        port: ${CONSUL_PORT}
+        discovery:
+          # instance-id must not be empty, must start with letter, end wit ha letter or digit, and have as interior characters ony
+          # letter, digits, and hyphen
+          instance-id: id:${random.uuid}
+          # instance-id must not be empty, must start with letter, end wit ha letter or digit, and have as interior characters ony
+          # letter, digits, and hyphen
+          serviceName: name:${spring.application.name}
+          # Consul needs this for health-check. Used for load-balancing stuff.
+          #healthCheckPath: /actuator/health
+          register: true
+          register-health-check: true
+          deregister: true
     datasource:
         driver-class-name: org.postgresql.Driver
         url: ${SPRING_DATASOURCE_URL}
